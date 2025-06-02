@@ -1,20 +1,4 @@
-export defau        <div className="bg-white rounded-lg p-4 mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-black">
-          <div className="flex flex-col">
-            <label htmlFor="nationality" className="mb-2 text-sm font-medium text-gray-700">Your Nationality</label>
-            <select id="nationality" className="border border-gray-300 rounded px-3 py-2">
-              <option value="">Select your nationality</option>
-              <option value="us">United States</option>
-              <option value="in">India</option>
-            </select>
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="destination" className="mb-2 text-sm font-medium text-gray-700">Destination Country</label>
-            <select id="destination" className="border border-gray-300 rounded px-3 py-2">
-              <option value="">Select destination</option>
-              <option value="my">Malaysia</option>
-              <option value="ke">Kenya</option>
-            </select>
-          </div> Hero() {
+export default function Hero() {
   return (
     <section
       className="bg-cover bg-center min-h-[80vh] flex items-center justify-center text-white text-center px-4"
