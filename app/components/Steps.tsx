@@ -1,44 +1,49 @@
-const steps = [
-  {
-    number: 1,
-    title: 'Apply Online',
-    description: 'Submit your visa application on our website',
-  },
-  {
-    number: 2,
-    title: 'Pay Online',
-    description: 'Secure payment system that accepts Credit, or Bank transfer',
-  },
-  {
-    number: 3,
-    title: 'Submit Documents',
-    description: 'Submit and manage your required documents through our secured portal',
-  },
-  {
-    number: 4,
-    title: 'Receive Your eVisa',
-    description: 'Sit back and relax — we’ll deliver your visa straight to your inbox',
-  },
-];
+'use client';
 
-const Steps = () => (
-  <section className="py-12 bg-white">
-    <div className="max-w-6xl px-4 mx-auto">
-      <h2 className="mb-8 text-3xl font-bold text-center">4 Easy Steps to Get Your eVisa</h2>
-      <div className="grid gap-8 md:grid-cols-4">
-        {steps.map((step) => (
-          <div key={step.number} className="p-6 border rounded shadow text-center">
-            <div className="text-4xl font-bold text-green-600 mb-4">{step.number}</div>
-            <h3 className="mb-2 text-xl font-semibold">{step.title}</h3>
-            <p className="text-gray-600">{step.description}</p>
-          </div>
-        ))}
+import React from 'react';
+
+interface Step {
+  icon: string;
+  title: string;
+  desc: string;
+}
+
+const Steps = () => {
+  const steps: Step[] = [
+    { icon: '📋', title: 'Fill Application', desc: 'Complete your visa application form online' },
+    { icon: '📄', title: 'Upload Documents', desc: 'Submit required documents securely' },
+    { icon: '☁️', title: 'Processing', desc: 'We process your application efficiently' },
+    { icon: '✅', title: 'Get Visa', desc: 'Receive your approved visa digitally' }
+  ];
+
+  return (
+    <section className="py-16 bg-[#FAF6E9]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">4 Easy Steps to Get Your eVisa</h2>
+          <p className="text-xl text-gray-600">Simple and straightforward process</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {steps.map((step, index) => (
+            <div key={index} className="text-center">
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+                {step.icon}
+              </div>
+              <h3 className="font-bold text-xl mb-3">{step.title}</h3>
+              <p className="text-gray-600">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <button className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 font-medium text-lg">
+            Start Now
+          </button>
+        </div>
       </div>
-      <div className="flex justify-center mt-8">
-        <button className="bg-green-600 text-white rounded px-6 py-3 hover:bg-green-700">Apply Now</button>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Steps;

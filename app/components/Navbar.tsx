@@ -1,18 +1,31 @@
-import Link from "next/link";
+'use client';
 
-export default function Navbar() {
+import React from 'react';
+
+const Navbar = () => {
   return (
-    <nav className="bg-white shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50">
-      <div className="text-xl font-bold text-green-700">UNITED <span className="text-yellow-500">eVisa</span> Service</div>
-      <div className="hidden md:flex space-x-6 text-sm">
-        <Link href="#">Get Your eVisa</Link>
-        <Link href="#">Pricing</Link>
-        <Link href="#">Info Center</Link>
-        <Link href="#">Contact Our Expert</Link>
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex items-center">
+            <div className="text-2xl font-bold text-green-600">UnitedeVisa</div>
+          </div>
+          <nav className="hidden md:flex space-x-8">
+            <a href="#" className="text-gray-700 hover:text-green-600">Home</a>
+            <a href="#" className="text-gray-700 hover:text-green-600">Destinations</a>
+            <a href="#" className="text-gray-700 hover:text-green-600">Visa Services</a>
+            <a href="#" className="text-gray-700 hover:text-green-600">Contact</a>
+          </nav>
+          <div className="flex items-center space-x-4">
+            <button className="text-gray-700 hover:text-green-600">Login</button>
+            <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+              Sign Up
+            </button>
+          </div>
+        </div>
       </div>
-      <button className="bg-green-600 text-white px-4 py-2 rounded-md text-sm hover:bg-green-700 transition">
-        APPLY
-      </button>
-    </nav>
+    </header>
   );
-}
+};
+
+export default Navbar;
